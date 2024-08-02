@@ -1,4 +1,8 @@
+import "./index.css";
+
 const App = () => {
-  return <h1>Sahu App</h1>;
+  return (
+    <p class="text-3xl font-bold text-green-600">TailWind Css Configured</p>
+  );
 };
 export default App;
