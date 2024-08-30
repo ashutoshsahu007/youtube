@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,8 +11,18 @@ const Head = () => {
 
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  const searchCache = useSelector((store) => store.search);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    const timer = setTimeout(() => {
+      if (searchCache[searchQuery]) {
+        setSuggestions(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestions();
+      }
+    }, 200);
     return () => {
       clearTimeout(timer);
     };
@@ -22,16 +33,20 @@ const Head = () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     setSuggestions(json[1]);
+    dispatch(
+      cacheResults({
+        [searchQuery]: json[1],
+      })
+    );
   };
 
-  const dispatch = useDispatch();
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
 
   return (
-    <div className="grid grid-flow-col p-2 m-2 shadow-lg">
-      <div className="flex col-span-1">
+    <div className="grid grid-flow-col p-2 m-2 shadow-lg sticky">
+      <div className="flex  col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
           className="h-8 cursor-pointer"
@@ -40,7 +55,7 @@ const Head = () => {
         />
         <a href="/">
           <img
-            className="h-10 mx-3"
+            className="h-12 mx-10"
             src="https://1000logos.net/wp-content/uploads/2017/05/Youtube-logo.jpg"
             alt="image not found"
           />
@@ -81,6 +96,7 @@ const Head = () => {
           alt="image not found"
         />
       </div>
+      <div className="font-bold">Ashutosh Sahu</div>
     </div>
   );
 };

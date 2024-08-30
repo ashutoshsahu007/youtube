@@ -8,8 +8,13 @@ const VideoCard = ({ info }) => {
       <img className="rounded-lg" src={thumbnails.medium.url} />
       <ul>
         <li className="font-bold py-2">{title}</li>
-        <li>{channelTitle}</li>
-        <li>{statistics.viewCount} views</li>
+        <li className="font-medium">{channelTitle}</li>
+        <li className="font-medium">
+          {statistics.viewCount
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          <span> Views</span>
+        </li>
       </ul>
     </div>
   );

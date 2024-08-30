@@ -10,29 +10,27 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="p-5 shadow-lg w-48">
-      <li>
+    <div className="p-5 shadow-lg w-48 m-1 sticky">
+      <li className="font-bold m-1">
         <Link>Home</Link>
       </li>
-      <li>Shorts</li>
-      <li>Video</li>
-      <li>Live</li>
+      <li className="font-bold m-1">Shorts</li>
+      <li className="font-bold m-1">Video</li>
+      <li className="font-bold m-1">Live</li>
 
-      <h1 className="font-bold pt-5">Subscription</h1>
-      <ul>
-        <li>Music</li>
-        <li>Sports</li>
-        <li>Gaming</li>
-        <li>Movies</li>
-      </ul>
+      <h1 className="font-bold  pt-5 text-xl ">Subscription</h1>
 
-      <h1 className="font-bold pt-5">Watch Later</h1>
-      <ul>
-        <li>Music</li>
-        <li>Sports</li>
-        <li>Gaming</li>
-        <li>Movies</li>
-      </ul>
+      <li className="font-bold m-1">Music</li>
+      <li className="font-bold m-1">Sports</li>
+      <li className="font-bold m-1">Gaming</li>
+      <li className="font-bold m-1">Movies</li>
+
+      <h1 className="font-bold pt-5 text-xl">Watch Later</h1>
+
+      <li className="font-bold m-1">Music</li>
+      <li className="font-bold m-1">Sports</li>
+      <li className="font-bold m-1">Gaming</li>
+      <li className="font-bold m-1">Movies</li>
     </div>
   );
 };
