@@ -12,11 +12,17 @@ const List = [
   "Valentines",
   "Cookies",
   "Singing",
+  "eating",
+  "virat",
+  "sidhu",
+  "raha",
+  "ashutosh",
+  "sahu",
 ];
 
 const ButtonList = () => {
   return (
-    <div className="flex">
+    <div className="w-[1090px] flex overflow-x-scroll  ">
       {List.map((item) => (
         <Button name={item} key={item} />
       ))}

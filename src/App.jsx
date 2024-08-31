@@ -7,6 +7,7 @@ import store from "./utils/store";
 import Demo from "./components/Demo";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Demo2 from "./components/Demo2";
 
 const appRouter = createBrowserRouter([
   {
@@ -23,7 +24,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/demo",
-        element: <Demo />,
+        element: (
+          <>
+            <Demo />
+            <Demo2 />
+          </>
+        ),
       },
     ],
   },

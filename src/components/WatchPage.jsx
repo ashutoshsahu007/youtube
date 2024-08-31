@@ -7,7 +7,6 @@ import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
-  console.log(searchParams.get("v"));
 
   const dispatch = useDispatch();
 
@@ -29,6 +28,7 @@ const WatchPage = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
+          <h1></h1>
         </div>
         <div className="w-full">
           <LiveChat />

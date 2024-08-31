@@ -45,11 +45,11 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-2 m-2 shadow-lg sticky">
+    <div className="grid grid-flow-col p-2 m-2 shadow-lg sticky items-center">
       <div className="flex  col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
-          className="h-8 cursor-pointer"
+          className="h-8 m-2 cursor-pointer"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToBRP_sFEuZ6VCwq601at0KzWioZkD__eRfw&s"
           alt="image not found"
         />
@@ -61,11 +61,11 @@ const Head = () => {
           />
         </a>
       </div>
-      <div className="col-span-10 px-10">
+      <div className="col-span-10 px-6">
         <div>
           <input
             type="text"
-            className="py-2 px-5 w-1/2 border border-gray-400 p-2 rounded-l-full"
+            className="py-2 px-2 w-1/2 border border-gray-400 p-2 rounded-l-full"
             placeholder="Enter Your Name"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -89,14 +89,15 @@ const Head = () => {
           </div>
         )}
       </div>
-      <div className="col-span-1">
+      <div className="col-span-1 flex">
         <img
           className="h-8"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe7qKgRvChw4p7QLmLJ_Vw2PyM11C6ThI6oA&s"
           alt="image not found"
         />
+
+        <div className="font-bold mx-3 items-center p-1">Ashutosh Sahu</div>
       </div>
-      <div className="font-bold">Ashutosh Sahu</div>
     </div>
   );
 };
