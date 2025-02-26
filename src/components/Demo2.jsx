@@ -1,16 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const Demo2 = () => {
-  let x = 10;
+  let x = 0;
   const [y, setY] = useState(0);
   const ref = useRef(0);
-
   const i = useRef(null);
 
   useEffect(() => {
-    i.current = setInterval(() => {
-      console.log("Hello sahu", Math.random());
-    }, 2000);
+    // i.current = setInterval(() => {
+    //   console.log("Hello sahu", Math.random());
+    // }, 2000);
   }, []);
 
   return (

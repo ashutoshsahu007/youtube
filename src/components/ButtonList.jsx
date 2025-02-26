@@ -1,29 +1,30 @@
 import React from "react";
 import Button from "./Button";
 
-const List = [
+const Buttons = [
   "All",
   "Live",
+  "Yo Yo Honey Singh",
   "Gaming",
   "Songs",
   "Soccer",
   "Cricekt",
   "Cooking",
-  "Valentines",
-  "Cookies",
   "Singing",
-  "eating",
-  "virat",
-  "sidhu",
-  "raha",
-  "ashutosh",
-  "sahu",
+  "Eating",
+  "Virat",
+  "Sidhu Moose Wala",
+  "Ashutosh Sahu Vlogs",
+  "Saurav Joshi Vlogs",
+  "Free Fire",
+  "PUBG",
+  "Football",
 ];
 
 const ButtonList = () => {
   return (
-    <div className="w-[1090px] flex overflow-x-scroll  ">
-      {List.map((item) => (
+    <div className="flex overflow-x-scroll no-scrollbar">
+      {Buttons.map((item) => (
         <Button name={item} key={item} />
       ))}
     </div>

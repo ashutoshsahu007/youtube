@@ -1,5 +1,5 @@
 import Body from "./components/Body";
-import Head from "./components/Head";
+import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import "./index.css";
@@ -39,7 +39,7 @@ const App = () => {
   return (
     <>
       <Provider store={store}>
-        <Head />
+        <Header />
         <RouterProvider router={appRouter} />
       </Provider>
     </>

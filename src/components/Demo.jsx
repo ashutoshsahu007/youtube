@@ -6,6 +6,8 @@ const Demo = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const prime = useMemo(() => findNthPrime(text), [text]);
+  // const prime = findNthPrime(text);
+
   return (
     <div
       className={
